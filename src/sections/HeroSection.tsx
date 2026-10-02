@@ -9,6 +9,25 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onShowToast }) => {
+  const handleDownloadCV = async () => {
+    try {
+      onShowToast?.('Downloading CV...');
+      const response = await fetch('/Feriyan_Eka_Nanda_CV.pdf');
+      if (!response.ok) throw new Error('File not found');
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'Feriyan_Eka_Nanda_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch {
+      // Fallback: open directly in new tab
+      window.open('/Feriyan_Eka_Nanda_CV.pdf', '_blank');
+    }
+  };
   const floatingTechs = [
     { name: 'Python', icon: '🐍', top: '12%', left: '10%' },
     { name: 'React.js', icon: '⚛️', top: '22%', right: '8%' },
@@ -121,17 +140,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onShowToast }) => {
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
 
-          <a
-            href={profileData.cvUrl}
-            download="CV Feriyan.PDFda_CV.pdf"
-            onClick={() => onShowToast?.('Downloading Feriyan Eka Nanda CV...')}
+          <button
+            type="button"
+            onClick={handleDownloadCV}
             className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white border border-white/10 hover:border-cyan-500/40 text-sm font-semibold flex items-center justify-center space-x-2 transition-all shadow-md group cursor-pointer"
             data-cursor="hover"
             title="Download Feriyan Eka Nanda CV (PDF)"
           >
             <Download className="w-4 h-4 text-cyan-400 group-hover:translate-y-0.5 transition-transform" />
             <span>Download CV</span>
-          </a>
+          </button>
         </motion.div>
 
         <motion.div

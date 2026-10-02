@@ -26,7 +26,7 @@ export const profileData: ProfileInfo = {
     whatsapp: "+62 821-2449-7842",
     whatsappUrl: "https://wa.me/6282124497842"
   },
-  cvUrl: "/CV Feriyan.PDFda_CV.pdf"
+  cvUrl: "/Feriyan_Eka_Nanda_CV.pdfda_CV.pdf"
 };
 
 export const domainFocusData: DomainFocus[] = [
