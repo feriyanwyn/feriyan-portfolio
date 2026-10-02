@@ -151,10 +151,13 @@ export const TerminalSection: React.FC = () => {
 
       case 'cv': {
         const link = document.createElement('a');
-        link.href = profileData.cvUrl;
-        link.download = 'Feriyan_Eka_Nanda_CV.pdfda_CV.pdf';
+        link.href = '/Feriyan_Eka_Nanda_CV.pdf';
+        link.setAttribute('download', 'Feriyan_Eka_Nanda_CV.pdf');
+        link.style.display = 'none';
+        document.body.appendChild(link);
         link.click();
-        output = <p className="text-cyan-400">&gt; Download initiated: Feriyan_Eka_Nanda_CV.pdfda_CV.pdf</p>;
+        document.body.removeChild(link);
+        output = <p className="text-cyan-400">&gt; Download initiated: Feriyan_Eka_Nanda_CV.pdf</p>;
         break;
       }
 

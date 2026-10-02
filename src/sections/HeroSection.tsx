@@ -9,24 +9,16 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onShowToast }) => {
-  const handleDownloadCV = async () => {
-    try {
-      onShowToast?.('Downloading CV...');
-      const response = await fetch('/Feriyan_Eka_Nanda_CV.pdf');
-      if (!response.ok) throw new Error('File not found');
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Feriyan_Eka_Nanda_CV.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    } catch {
-      // Fallback: open directly in new tab
-      window.open('/Feriyan_Eka_Nanda_CV.pdf', '_blank');
-    }
+  const handleDownloadCV = () => {
+    onShowToast?.('Downloading CV...');
+    // Create anchor and trigger download immediately (most reliable approach)
+    const link = document.createElement('a');
+    link.href = '/Feriyan_Eka_Nanda_CV.pdf';
+    link.setAttribute('download', 'Feriyan_Eka_Nanda_CV.pdf');
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   const floatingTechs = [
     { name: 'Python', icon: '🐍', top: '12%', left: '10%' },

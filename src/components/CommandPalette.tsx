@@ -131,9 +131,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose,
       icon: Download,
       action: () => {
         const link = document.createElement('a');
-        link.href = profileData.cvUrl;
-        link.download = 'Feriyan_Eka_Nanda_CV.pdfda_CV.pdf';
+        link.href = '/Feriyan_Eka_Nanda_CV.pdf';
+        link.setAttribute('download', 'Feriyan_Eka_Nanda_CV.pdf');
+        link.style.display = 'none';
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
         onClose();
         onShowToast('Downloading Feriyan Eka Nanda CV...');
       },
