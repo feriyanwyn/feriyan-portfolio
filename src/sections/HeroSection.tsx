@@ -123,7 +123,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onShowToast }) => {
 
           <a
             href={profileData.cvUrl}
-            download="Feriyan_Eka_Nanda_CV.pdf"
+            download="CV Feriyan.PDFda_CV.pdf"
             onClick={() => onShowToast?.('Downloading Feriyan Eka Nanda CV...')}
             className="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 hover:text-white border border-white/10 hover:border-cyan-500/40 text-sm font-semibold flex items-center justify-center space-x-2 transition-all shadow-md group cursor-pointer"
             data-cursor="hover"
