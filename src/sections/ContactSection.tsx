@@ -249,7 +249,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onShowToast }) =
                     className="text-sm font-semibold text-cyan-400 hover:text-cyan-300 mt-0.5 inline-flex items-center gap-1.5"
                     data-cursor="hover"
                   >
-                    <span>https://fryn-porto.vercel.app</span>
+                    <span>https://feriyan-portfolio.vercel.app</span>
                     <ExternalLink className="w-3 h-3" />
                   </a>
                 </div>

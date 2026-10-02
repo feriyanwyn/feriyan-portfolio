@@ -175,7 +175,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose,
     },
     {
       id: 'social-portfolio',
-      label: 'Open Portfolio Website (https://fryn-porto.vercel.app)',
+      label: 'Open Portfolio Website (https://feriyan-portfolio.vercel.app)',
       category: 'Social',
       icon: Globe,
       action: () => {
@@ -299,8 +299,8 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({ isOpen, onClose,
                     onClick={cmd.action}
                     onMouseEnter={() => setSelectedIndex(idx)}
                     className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-left transition-all ${isSelected
-                        ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 shadow-[0_0_10px_rgba(6,182,212,0.15)]'
-                        : 'text-slate-300 hover:bg-white/5'
+                      ? 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/40 shadow-[0_0_10px_rgba(6,182,212,0.15)]'
+                      : 'text-slate-300 hover:bg-white/5'
                       }`}
                   >
                     <div className="flex items-center space-x-3">

@@ -22,7 +22,7 @@ export const profileData: ProfileInfo = {
     github: "https://github.com/feriyanwyn",
     linkedin: "https://linkedin.com/in/feriyan-eka-nanda",
     email: "feriyanekananda@gmail.com",
-    portfolio: "https://fryn-porto.vercel.app",
+    portfolio: "https://feriyan-portfolio.vercel.app",
     whatsapp: "+62 821-2449-7842",
     whatsappUrl: "https://wa.me/6282124497842"
   },
